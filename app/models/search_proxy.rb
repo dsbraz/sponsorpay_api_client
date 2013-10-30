@@ -31,17 +31,17 @@ class SearchProxy
       # TODO check hashkey
       true
     when 400
-      raise 'Calling SponsorPay API: Bad request'
+      raise 'SponsorPay API: Bad request'
     when 401
-      raise 'Calling SponsorPay API: Unauthorized'
+      raise 'SponsorPay API: Unauthorized'
     when 404
-      raise 'Calling SponsorPay API: Not found'
+      raise 'SponsorPay API: Not found'
     when 500
-      raise 'Calling SponsorPay API: Internal Server Error'
+      raise 'SponsorPay API: Internal Server Error'
     when 502
-      raise 'Calling SponsorPay API: Bad Gateway'
+      raise 'SponsorPay API: Bad Gateway'
     else
-      raise 'Calling SponsorPay API: Unknow problem'
+      raise 'SponsorPay API: Unknow problem'
     end
   end
 end
