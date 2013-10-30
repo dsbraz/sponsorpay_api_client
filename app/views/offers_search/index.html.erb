@@ -1,0 +1,18 @@
+<div class='offers_search'>
+  <%= form_tag offers_search_path do %>
+    <%= label_tag 'uid', 'UID' %>
+    <%= text_field_tag 'uid' %>
+    <%= label_tag 'pub0', 'Pub0' %>
+    <%= text_field_tag 'pub0' %>
+    <%= label_tag 'page', 'Page' %>
+    <%= text_field_tag 'page' %>
+    <%= submit_tag 'search' %>
+  <% end %>
+</div>
+<% if @offer.nil? %>
+  <p>Seach something</p>
+<% elsif @offers.empty? %>
+  <%= render 'no_offers' %>
+<% else %>
+  <%= render 'offers' %>
+<% end %>

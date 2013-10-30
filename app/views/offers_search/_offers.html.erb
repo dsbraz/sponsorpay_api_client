@@ -1,0 +1,9 @@
+  <div class='offers'>
+    <% @offers.try(:each) do |offer| %>
+      <div class='offer'>
+        <div class='title'>Offer Title</div>
+        <div class='payout'>Offer Payout</div>
+        <div class='thumbnail'>Offer Thumbnail</div>
+      </div>
+    <% end %>
+  </div>
