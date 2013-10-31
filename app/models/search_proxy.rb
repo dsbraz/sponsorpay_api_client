@@ -22,6 +22,7 @@ class SearchProxy
 
   def do_get(options)
     response = self.class.get('/', { query: options.data })
+    Rails.logger.debug "Calling API => #{response.request.last_uri}"
     response if valid? response
   end
 
@@ -46,6 +47,7 @@ class SearchProxy
   end
 
   def error_message(response, message)
-    "SponsorPay API: #{message} => #{response['code']}"
+    Rails.logger.error "\nError => #{response.code} #{response['code']}\n"
+    "SponsorPay API: #{response.code} #{message} => #{response['code']}"
   end
 end

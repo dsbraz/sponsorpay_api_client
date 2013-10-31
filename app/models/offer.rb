@@ -3,7 +3,7 @@ class Offer < Struct.new(:title, :payout, :thumbnail)
     Array.new.tap do |arr|
       proxy = SearchProxy.new
       response = proxy.search(params)
-      response['offers'].each do |offer|
+      response['offers'].try(:each) do |offer|
         arr << Offer.new(offer['title'], offer['payout'],
                           offer['thumbnail']['lowres'])
       end
