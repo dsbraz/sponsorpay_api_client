@@ -31,17 +31,21 @@ class SearchProxy
       # TODO check hashkey
       true
     when 400
-      raise 'SponsorPay API: Bad request'
+      raise error_message(response, "Bad request")
     when 401
-      raise 'SponsorPay API: Unauthorized'
+      raise error_message(response, "Unauthorized")
     when 404
-      raise 'SponsorPay API: Not found'
+      raise error_message(response, "Not found")
     when 500
-      raise 'SponsorPay API: Internal Server Error'
+      raise error_message(response, "Internal Server Error")
     when 502
-      raise 'SponsorPay API: Bad Gateway'
+      raise error_message(response, "Bad Gateway")
     else
-      raise 'SponsorPay API: Unknow problem'
+      raise error_message(response, "Unknow problem")
     end
+  end
+
+  def error_message(response, message)
+    "SponsorPay API: #{message} => #{response['code']}"
   end
 end
