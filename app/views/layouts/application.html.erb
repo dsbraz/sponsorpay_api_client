@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<div class='messages'>
+  <% if flash['error'] %>
+    <p class='error'><%= flash['error'] %></p>
+  <% end %>
+</div>
+
 <%= yield %>
 
 </body>

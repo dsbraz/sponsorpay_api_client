@@ -9,10 +9,4 @@
     <%= submit_tag 'search' %>
   <% end %>
 </div>
-<% if @offer.nil? %>
-  <p>Seach something</p>
-<% elsif @offers.empty? %>
-  <%= render 'no_offers' %>
-<% else %>
-  <%= render 'offers' %>
-<% end %>
+<%= render_offers %>
