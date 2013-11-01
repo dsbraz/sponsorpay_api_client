@@ -11832,3 +11832,360 @@ Calling API => http://api.sponsorpay.com/feed/v1/offers.json/?format=json&appid=
   Rendered offers_search/_offers.html.erb (1.8ms)
   Rendered offers_search/index.html.erb within layouts/application (17.4ms)
 Completed 200 OK in 1404ms (Views: 79.9ms)
+--------------------------------------------------------------------
+OfferTest: test_shoud_be_possible_to_specified_a_pub0_when_searching
+--------------------------------------------------------------------
+--------------------------------------------------------------------------
+OfferTest: test_shoud_be_possible_to_specified_a_valid_page_when_searching
+--------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+OfferTest: test_shoud_not_be_possible_to_specified_an_invalid_page_when_searching
+---------------------------------------------------------------------------------
+-------------------------------------------------------------
+OfferTest: test_should_be_an_Array_of_Offer_when_hit_a_result
+-------------------------------------------------------------
+-------------------------------------------------------
+OfferTest: test_should_be_possible_to_search_for_offers
+-------------------------------------------------------
+-------------------------------------------------
+OffersSearchControllerTest: test_should_get_index
+-------------------------------------------------
+Processing by OffersSearchController#index as HTML
+  Rendered offers_search/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 209ms (Views: 208.4ms)
+---------------------------------------------------
+OffersSearchControllerTest: test_should_post_search
+---------------------------------------------------
+Processing by OffersSearchController#search as HTML
+  Parameters: {"uid"=>"player1"}
+Completed 500 Internal Server Error in 1531ms
+------------------------------------------------------
+SearchOptionsTest: test_shoud_has_a_str_representation
+------------------------------------------------------
+----------------------------------------------------------
+SearchOptionsTest: test_should_be_able_to_merge_the_values
+----------------------------------------------------------
+----------------------------------------------
+SearchOptionsTest: test_should_sign_using_sha1
+----------------------------------------------
+--------------------------------------------------------------
+SearchOptionsTest: test_should_sort_the_options_alphabetically
+--------------------------------------------------------------
+---------------------------------------------------------
+SearchProxyTest: test_should_not_process_invalid_response
+---------------------------------------------------------
+---------------------------------------------------
+SearchProxyTest: test_should_process_valid_response
+---------------------------------------------------
+------------------------------------------
+SearchProxyTest: test_should_return_a_Hash
+------------------------------------------
+------------------------------------------------------
+SearchProxyTest: test_should_search_on_sponsor_pay_api
+------------------------------------------------------
+-----------------------------------------------------
+SearchResponseTest: test_should_know_the_content_hash
+-----------------------------------------------------
+Response calculated signature => de523e4304fa702fcf838303b51c9f8505a750ee
+Response signature => de523e4304fa702fcf838303b51c9f8505a750ee
+--------------------------------------------------------
+SearchResponseTest: test_should_know_the_last_uri_called
+--------------------------------------------------------
+Response calculated signature => de523e4304fa702fcf838303b51c9f8505a750ee
+Response signature => de523e4304fa702fcf838303b51c9f8505a750ee
+--------------------------------------------------------------------------------------------
+SearchResponseTest: test_should_not_be_valid_when_status_is_200_and_the_sign_do_not_validate
+--------------------------------------------------------------------------------------------
+Response calculated signature => acbf8a4eb6765ccbc3d32f7e6fd635c510228fce
+Response signature => de523e4304fa702fcf838303b51c9f8505a750ee
+
+Error => 200 200
+
+---------------------------------------------------------------------
+SearchResponseTest: test_should_raise_an_exception_when_status_is_400
+---------------------------------------------------------------------
+
+Error => 400 400
+
+---------------------------------------------------------------------
+SearchResponseTest: test_should_raise_an_exception_when_status_is_401
+---------------------------------------------------------------------
+
+Error => 401 401
+
+---------------------------------------------------------------------
+SearchResponseTest: test_should_raise_an_exception_when_status_is_404
+---------------------------------------------------------------------
+
+Error => 404 404
+
+---------------------------------------------------------------------
+SearchResponseTest: test_should_raise_an_exception_when_status_is_500
+---------------------------------------------------------------------
+
+Error => 500 500
+
+---------------------------------------------------------------------
+SearchResponseTest: test_should_raise_an_exception_when_status_is_502
+---------------------------------------------------------------------
+
+Error => 502 502
+
+-----------------------------------------------------------
+SearchResponseTest: test_should_validate_when_status_is_200
+-----------------------------------------------------------
+Response calculated signature => de523e4304fa702fcf838303b51c9f8505a750ee
+Response signature => de523e4304fa702fcf838303b51c9f8505a750ee
+--------------------------------------------------------------------
+OfferTest: test_shoud_be_possible_to_specified_a_pub0_when_searching
+--------------------------------------------------------------------
+Calling API => http://api.sponsorpay.com/feed/v1/offers.json/?format=json&appid=157&ip=109.235.143.113&locale=de&offer_types=112&device_id=2b6f0cc904d137be2%20e1730235f5664094b%20831186&uid=player1&pub0=camp1&timestamp=1383323002&hashkey=47db66225f43945fed5dcd3607169a2be071f618
+Response calculated signature => 9d31039a1225199ccf85e026cf2ba91ad0695b7c
+Response signature => 9d31039a1225199ccf85e026cf2ba91ad0695b7c
+--------------------------------------------------------------------------
+OfferTest: test_shoud_be_possible_to_specified_a_valid_page_when_searching
+--------------------------------------------------------------------------
+Calling API => http://api.sponsorpay.com/feed/v1/offers.json/?format=json&appid=157&ip=109.235.143.113&locale=de&offer_types=112&device_id=2b6f0cc904d137be2%20e1730235f5664094b%20831186&uid=player1&page=1&timestamp=1383323003&hashkey=d2d1b14f21900ed5fbb4748264c9e211aa9ada9e
+Response calculated signature => d267f89deb2507cea1c73d5ce329d4830143ec9e
+Response signature => d267f89deb2507cea1c73d5ce329d4830143ec9e
+---------------------------------------------------------------------------------
+OfferTest: test_shoud_not_be_possible_to_specified_an_invalid_page_when_searching
+---------------------------------------------------------------------------------
+Calling API => http://api.sponsorpay.com/feed/v1/offers.json/?format=json&appid=157&ip=109.235.143.113&locale=de&offer_types=112&device_id=2b6f0cc904d137be2%20e1730235f5664094b%20831186&uid=player1&page=10000&timestamp=1383323004&hashkey=7b46017d82110777d9e473fceb29679139c5e478
+
+Error => 400 ERROR_INVALID_PAGE
+
+-------------------------------------------------------------
+OfferTest: test_should_be_an_Array_of_Offer_when_hit_a_result
+-------------------------------------------------------------
+Calling API => http://api.sponsorpay.com/feed/v1/offers.json/?format=json&appid=157&ip=109.235.143.113&locale=de&offer_types=112&device_id=2b6f0cc904d137be2%20e1730235f5664094b%20831186&uid=player1&timestamp=1383323006&hashkey=7671436944f024a68cf5ba1b008d1deebf114fbc
+Response calculated signature => 6da6070a5ba466bdb225ce26d63a028b6c2dbe05
+Response signature => 6da6070a5ba466bdb225ce26d63a028b6c2dbe05
+-------------------------------------------------------
+OfferTest: test_should_be_possible_to_search_for_offers
+-------------------------------------------------------
+Calling API => http://api.sponsorpay.com/feed/v1/offers.json/?format=json&appid=157&ip=109.235.143.113&locale=de&offer_types=112&device_id=2b6f0cc904d137be2%20e1730235f5664094b%20831186&uid=player1&timestamp=1383323008&hashkey=b866d42c310a848acd80477a9dbeb15a177b1aad
+Response calculated signature => 65a33e736836dd2031b60f8b86fd8743699fa4e1
+Response signature => 65a33e736836dd2031b60f8b86fd8743699fa4e1
+-------------------------------------------------
+OffersSearchControllerTest: test_should_get_index
+-------------------------------------------------
+Processing by OffersSearchController#index as HTML
+  Rendered offers_search/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 206ms (Views: 205.4ms)
+---------------------------------------------------
+OffersSearchControllerTest: test_should_post_search
+---------------------------------------------------
+Processing by OffersSearchController#search as HTML
+  Parameters: {"uid"=>"player1"}
+Calling API => http://api.sponsorpay.com/feed/v1/offers.json/?format=json&appid=157&ip=109.235.143.113&locale=de&offer_types=112&device_id=2b6f0cc904d137be2%20e1730235f5664094b%20831186&uid=player1&pub0=&page=&timestamp=1383323009&hashkey=72490c901a476608c6d6dc38f98f141518c97625
+Response calculated signature => 7ff22497498e83cd6dda52de2eacf81ff6661aa7
+Response signature => 7ff22497498e83cd6dda52de2eacf81ff6661aa7
+  Rendered offers_search/_offers.html.erb (2.9ms)
+Completed 200 OK in 1621ms (Views: 85.4ms)
+------------------------------------------------------
+SearchOptionsTest: test_shoud_has_a_str_representation
+------------------------------------------------------
+----------------------------------------------------------
+SearchOptionsTest: test_should_be_able_to_merge_the_values
+----------------------------------------------------------
+----------------------------------------------
+SearchOptionsTest: test_should_sign_using_sha1
+----------------------------------------------
+--------------------------------------------------------------
+SearchOptionsTest: test_should_sort_the_options_alphabetically
+--------------------------------------------------------------
+---------------------------------------------------------
+SearchProxyTest: test_should_not_process_invalid_response
+---------------------------------------------------------
+Calling API => http://api.sponsorpay.com/feed/v1/offers.json/?format=json&appid=abc&ip=109.235.143.113&locale=de&offer_types=112&device_id=2b6f0cc904d137be2%20e1730235f5664094b%20831186&uid=player1&timestamp=1383323011&hashkey=8ba2d569b3b4757c2e3dd0c12801f72424a9458d
+
+Error => 400 ERROR_INVALID_APPID
+
+---------------------------------------------------
+SearchProxyTest: test_should_process_valid_response
+---------------------------------------------------
+Calling API => http://api.sponsorpay.com/feed/v1/offers.json/?format=json&appid=157&ip=109.235.143.113&locale=de&offer_types=112&device_id=2b6f0cc904d137be2%20e1730235f5664094b%20831186&uid=player1&timestamp=1383323011&hashkey=2d6aac916d08c2bb9780515ef1ea18be22483486
+Response calculated signature => 32efa7c2b7ee35b824026cd4c021b0876586e0b5
+Response signature => 32efa7c2b7ee35b824026cd4c021b0876586e0b5
+------------------------------------------
+SearchProxyTest: test_should_return_a_Hash
+------------------------------------------
+Calling API => http://api.sponsorpay.com/feed/v1/offers.json/?format=json&appid=157&ip=109.235.143.113&locale=de&offer_types=112&device_id=2b6f0cc904d137be2%20e1730235f5664094b%20831186&uid=player1&timestamp=1383323013&hashkey=f6747becaa4c87fa12829cf200837800b07ac93a
+Response calculated signature => a255049dd54f2265a0585c313a6d4cc8b1931218
+Response signature => a255049dd54f2265a0585c313a6d4cc8b1931218
+------------------------------------------------------
+SearchProxyTest: test_should_search_on_sponsor_pay_api
+------------------------------------------------------
+Calling API => http://api.sponsorpay.com/feed/v1/offers.json/?format=json&appid=157&ip=109.235.143.113&locale=de&offer_types=112&device_id=2b6f0cc904d137be2%20e1730235f5664094b%20831186&uid=player1&timestamp=1383323014&hashkey=d4f0cf44e7fdf2dc1d25f3967bbf77e8067affc5
+Response calculated signature => 123edaa09da19609e86e83dddc938f902a25f9c0
+Response signature => 123edaa09da19609e86e83dddc938f902a25f9c0
+-----------------------------------------------------
+SearchResponseTest: test_should_know_the_content_hash
+-----------------------------------------------------
+Response calculated signature => de523e4304fa702fcf838303b51c9f8505a750ee
+Response signature => de523e4304fa702fcf838303b51c9f8505a750ee
+--------------------------------------------------------
+SearchResponseTest: test_should_know_the_last_uri_called
+--------------------------------------------------------
+Response calculated signature => de523e4304fa702fcf838303b51c9f8505a750ee
+Response signature => de523e4304fa702fcf838303b51c9f8505a750ee
+--------------------------------------------------------------------------------------------
+SearchResponseTest: test_should_not_be_valid_when_status_is_200_and_the_sign_do_not_validate
+--------------------------------------------------------------------------------------------
+Response calculated signature => acbf8a4eb6765ccbc3d32f7e6fd635c510228fce
+Response signature => de523e4304fa702fcf838303b51c9f8505a750ee
+
+Error => 200 200
+
+---------------------------------------------------------------------
+SearchResponseTest: test_should_raise_an_exception_when_status_is_400
+---------------------------------------------------------------------
+
+Error => 400 400
+
+---------------------------------------------------------------------
+SearchResponseTest: test_should_raise_an_exception_when_status_is_401
+---------------------------------------------------------------------
+
+Error => 401 401
+
+---------------------------------------------------------------------
+SearchResponseTest: test_should_raise_an_exception_when_status_is_404
+---------------------------------------------------------------------
+
+Error => 404 404
+
+---------------------------------------------------------------------
+SearchResponseTest: test_should_raise_an_exception_when_status_is_500
+---------------------------------------------------------------------
+
+Error => 500 500
+
+---------------------------------------------------------------------
+SearchResponseTest: test_should_raise_an_exception_when_status_is_502
+---------------------------------------------------------------------
+
+Error => 502 502
+
+-----------------------------------------------------------
+SearchResponseTest: test_should_validate_when_status_is_200
+-----------------------------------------------------------
+Response calculated signature => de523e4304fa702fcf838303b51c9f8505a750ee
+Response signature => de523e4304fa702fcf838303b51c9f8505a750ee
+
+
+Started GET "/" for 10.0.2.2 at 2013-11-01 16:33:22 +0000
+Processing by OffersSearchController#index as HTML
+  Rendered offers_search/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 256ms (Views: 232.9ms)
+
+
+Started GET "/assets/offers_search.css?body=1" for 10.0.2.2 at 2013-11-01 16:33:22 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:22 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:22 +0000
+
+
+Started GET "/assets/offers_search.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:22 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2013-11-01 16:33:22 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:22 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:22 +0000
+
+
+Started POST "/offers_search" for 10.0.2.2 at 2013-11-01 16:33:27 +0000
+Processing by OffersSearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BAuatkoUWBtr84FO5k9QXKi8iSMnZCS4nKgXMnfrObQ=", "uid"=>"p1", "pub0"=>"", "page"=>"", "commit"=>"search"}
+Calling API => http://api.sponsorpay.com/feed/v1/offers.json/?format=json&appid=157&ip=109.235.143.113&locale=de&offer_types=112&device_id=2b6f0cc904d137be2%20e1730235f5664094b%20831186&uid=p1&pub0=&page=&timestamp=1383323608&hashkey=858722d67fe26dcd37775dd7df388c7201f93d4e
+Response calculated signature => e367e619db719e567e47a4fd10f4c2109badd506
+Response signature => e367e619db719e567e47a4fd10f4c2109badd506
+  Rendered offers_search/_offers.html.erb (2.4ms)
+  Rendered offers_search/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 2259ms (Views: 90.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2013-11-01 16:33:30 +0000
+
+
+Started GET "/assets/offers_search.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:30 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:30 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:30 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:30 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:30 +0000
+
+
+Started POST "/offers_search" for 10.0.2.2 at 2013-11-01 16:33:37 +0000
+Processing by OffersSearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BAuatkoUWBtr84FO5k9QXKi8iSMnZCS4nKgXMnfrObQ=", "uid"=>"", "pub0"=>"", "page"=>"", "commit"=>"search"}
+Calling API => http://api.sponsorpay.com/feed/v1/offers.json/?format=json&appid=157&ip=109.235.143.113&locale=de&offer_types=112&device_id=2b6f0cc904d137be2%20e1730235f5664094b%20831186&uid=&pub0=&page=&timestamp=1383323617&hashkey=6c71609a5f40d5c59120eb96f1ff74441aa9bbed
+
+Error => 400 ERROR_INVALID_UID
+
+  Rendered offers_search/_no_offers.html.erb (0.4ms)
+  Rendered offers_search/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 1593ms (Views: 73.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:38 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:38 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:38 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:38 +0000
+
+
+Started GET "/assets/offers_search.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:38 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2013-11-01 16:33:39 +0000
+
+
+Started POST "/offers_search" for 10.0.2.2 at 2013-11-01 16:33:43 +0000
+Processing by OffersSearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BAuatkoUWBtr84FO5k9QXKi8iSMnZCS4nKgXMnfrObQ=", "uid"=>"p1", "pub0"=>"", "page"=>"2", "commit"=>"search"}
+Calling API => http://api.sponsorpay.com/feed/v1/offers.json/?format=json&appid=157&ip=109.235.143.113&locale=de&offer_types=112&device_id=2b6f0cc904d137be2%20e1730235f5664094b%20831186&uid=p1&pub0=&page=2&timestamp=1383323623&hashkey=6cb0d2ee0116de10974805b8b89d2e11dcff9e9c
+
+Error => 400 ERROR_INVALID_PAGE
+
+  Rendered offers_search/_no_offers.html.erb (0.0ms)
+  Rendered offers_search/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 1583ms (Views: 72.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:44 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:44 +0000
+
+
+Started GET "/assets/offers_search.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:44 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:44 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2013-11-01 16:33:44 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2013-11-01 16:33:44 +0000
