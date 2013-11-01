@@ -7,10 +7,6 @@ class SearchResponse
     check_response
   end
 
-  def last_uri
-    @response.request.last_uri
-  end
-
   def content
     @response.parsed_response
   end

@@ -12,10 +12,6 @@ class SearchOptions
     @data.merge!({ hashkey: Digest::SHA1.hexdigest(to_s + "&#{api_key}") })
   end
 
-  def sort
-    @data.sort_by { |k, v| k }
-  end
-
   def merge!(other)
     @data.merge!(other)
   end

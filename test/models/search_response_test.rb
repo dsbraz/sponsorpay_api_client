@@ -19,19 +19,7 @@ class ResponseFake < Struct.new(:code)
   end
 end
 
-# Build a Fake or use a Mock Framework
-class RequestFake
-  def last_uri
-    "http://sponsorpay/fakeuri"
-  end
-end
-
 class SearchResponseTest < ActiveSupport::TestCase
-  test 'should know the last uri called' do
-    srp = SearchResponse.new(ResponseFake.new(200), '123')
-    refute_nil srp.last_uri
-  end
-
   test 'should know the content hash' do
     content = SearchResponse.new(ResponseFake.new(200), '123').content
     assert_instance_of Hash, content

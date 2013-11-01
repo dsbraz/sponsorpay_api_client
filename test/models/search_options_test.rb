@@ -2,11 +2,6 @@ require 'test_helper'
 require 'digest/sha1'
 
 class SearchOptionsTest < ActiveSupport::TestCase
-  test 'should sort the options alphabetically' do
-    options = SearchOptions.new({ b: '123', c: '123', a: '123' }).sort
-    assert options == [[:a, '123'], [:b, '123'], [:c, '123']]
-  end
-
   test 'shoud has a str representation' do
     options = SearchOptions.new({ b: '123', c: '123', a: '123' }).to_s
     assert options == 'a=123&b=123&c=123'
