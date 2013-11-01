@@ -22,8 +22,8 @@ class SearchProxy
   private
 
   def do_get(options)
-    srp = SearchResponse.new(self.class.get('/', { query: options.data }))
+    srp = SearchResponse.new(self.class.get('/', { query: options.data }), @api_key)
     Rails.logger.debug "Calling API => #{srp.last_uri}"
-    srp.response if srp.valid?(@api_key)
+    srp.content
   end
 end

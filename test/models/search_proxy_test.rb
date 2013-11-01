@@ -3,8 +3,13 @@ require 'test_helper'
 class SearchProxyTest < ActiveSupport::TestCase
   test 'should search on sponsor pay api' do
     response = SearchProxy.new.search({ uid: 'player1' })
-    last_uri = response.request.last_uri.to_s
-    refute_nil last_uri.gsub('http://api.sponsorpay.com/feed/v1/offers.json').first
+    url = response['information']['support_url']
+    refute_nil url.gsub('http://api.sponsorpay.com').first
+  end
+
+  test 'should return a Hash' do
+    response = SearchProxy.new.search({ uid: 'player1' })
+    assert_instance_of Hash, response
   end
 
   test 'should process valid response' do

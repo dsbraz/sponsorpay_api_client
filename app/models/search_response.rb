@@ -1,10 +1,31 @@
 require 'digest/sha1'
 
-class SearchResponse < Struct.new(:response)
-  def valid?(api_key)
-    case response.code
+class SearchResponse
+  def initialize(response, api_key)
+    @response = response
+    @api_key = api_key
+    check_response
+  end
+
+  def last_uri
+    @response.request.last_uri
+  end
+
+  def content
+    @response.parsed_response
+  end
+
+  private
+
+  def error_message(message)
+    Rails.logger.error "\nError => #{@response.code} #{@response['code']}\n"
+    "SponsorPay API: #{@response.code} #{message} #{@response['code']}"
+  end
+
+  def check_response
+    case @response.code
     when 200
-      valid_signature? api_key
+      raise error_message('Invalid response signature') unless valid_signature?
     when 400
       raise error_message('Bad request')
     when 401
@@ -20,21 +41,10 @@ class SearchResponse < Struct.new(:response)
     end
   end
 
-  def last_uri
-    response.request.last_uri
-  end
-
-  private
-
-  def error_message(message)
-    Rails.logger.error "\nError => #{response.code} #{response['code']}\n"
-    "SponsorPay API: #{response.code} #{message} #{response['code']}"
-  end
-
-  def valid_signature?(api_key)
-    hash = Digest::SHA1.hexdigest(response.body + api_key)
+  def valid_signature?
+    hash = Digest::SHA1.hexdigest(@response.body + @api_key)
     Rails.logger.debug "Response calculated signature => #{hash}"
-    Rails.logger.debug "Response signature => #{response.header['X-Sponsorpay-Response-Signature']}"
-    hash == response.header['X-Sponsorpay-Response-Signature']
+    Rails.logger.debug "Response signature => #{@response.header['X-Sponsorpay-Response-Signature']}"
+    hash == @response.header['X-Sponsorpay-Response-Signature']
   end
 end
