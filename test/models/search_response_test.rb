@@ -28,7 +28,7 @@ class SearchResponseTest < ActiveSupport::TestCase
     refute_nil srp.last_uri
   end
 
-  test 'should validate then status is 200' do
+  test 'should validate when status is 200' do
     srp = SearchResponse.new(ResponseFake.new(200))
     assert srp.valid?('123')
   end
