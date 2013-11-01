@@ -22,39 +22,8 @@ class SearchProxy
   private
 
   def do_get(options)
-    response = self.class.get('/', { query: options.data })
-    Rails.logger.debug "Calling API => #{response.request.last_uri}"
-    response if valid? response
-  end
-
-  def valid?(response)
-    case response.code
-    when 200
-      valid_signature? response
-    when 400
-      raise error_message(response, "Bad request")
-    when 401
-      raise error_message(response, "Unauthorized")
-    when 404
-      raise error_message(response, "Not found")
-    when 500
-      raise error_message(response, "Internal Server Error")
-    when 502
-      raise error_message(response, "Bad Gateway")
-    else
-      raise error_message(response, "Unknow problem")
-    end
-  end
-
-  def error_message(response, message)
-    Rails.logger.error "\nError => #{response.code} #{response['code']}\n"
-    "SponsorPay API: #{response.code} #{message} #{response['code']}"
-  end
-
-  def valid_signature?(response)
-    hash = Digest::SHA1.hexdigest(response.body + @api_key)
-    Rails.logger.debug "Response calculated signature => #{hash}"
-    Rails.logger.debug "Response signature => #{response.header['X-Sponsorpay-Response-Signature']}"
-    hash == response.header['X-Sponsorpay-Response-Signature']
+    srp = SearchResponse.new(self.class.get('/', { query: options.data }))
+    Rails.logger.debug "Calling API => #{srp.last_uri}"
+    srp.response if srp.valid?(@api_key)
   end
 end
